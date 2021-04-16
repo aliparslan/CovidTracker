@@ -31,6 +31,7 @@ public class Race implements Comparable {
     public float getCFR() {
         // example comment
         // something something
+        // random comment
         return this.CFR;
     }
 
