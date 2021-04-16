@@ -30,6 +30,7 @@ public class Race implements Comparable {
      */
     public float getCFR() {
         // example comment
+        // something something
         return this.CFR;
     }
 
