@@ -18,9 +18,9 @@ public class Race implements Comparable {
     /**
      * 
      */
-    public Race(String name, Object obj1, Object obj2) {
+    public Race(String name, int deaths, int cases) {
         this.name = name;
-        // nothing here yet
+        this.CFR = deaths / cases;
     }
 
     // Methods .......................................
