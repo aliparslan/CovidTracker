@@ -1,6 +1,5 @@
 package covidtracker;
 
-
 /**
  * 
  * @author aliparslan
@@ -8,14 +7,14 @@ package covidtracker;
  *
  */
 public class Race implements Comparable {
-    
+
     // Fields ........................................
-    
+
     private String name;
     private float CFR;
-    
+
     // Constructor ...................................
-    
+
     /**
      * 
      */
@@ -23,16 +22,17 @@ public class Race implements Comparable {
         this.name = name;
         // nothing here yet
     }
-    
+
     // Methods .......................................
-    
+
     /**
      * 
      */
     public float getCFR() {
+        // example comment
         return this.CFR;
     }
-    
+
     /**
      * 
      */
@@ -40,7 +40,7 @@ public class Race implements Comparable {
         return true;
         // TODO nothing here yet
     }
-    
+
     /**
      * 
      */
