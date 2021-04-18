@@ -12,7 +12,7 @@ import java.util.Comparator;
  */
 public class CompareCFR implements Comparator<Race> {
     /**
-     * Returns the highest CFR
+     * Returns the highest CFR between two Races
      * 
      * @return int of which Race has the higher CFR
      */
