@@ -105,5 +105,4 @@ public class State implements Comparable<State> {
 
         return 0;
     }
-
 }
