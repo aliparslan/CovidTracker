@@ -43,6 +43,15 @@ public class Race {
     public float getCFR() {
         return CFR;
     }
+    
+    /**
+     * Returns race's name
+     * 
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
 
 
     /**
