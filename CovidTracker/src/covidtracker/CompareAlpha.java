@@ -1,6 +1,3 @@
-/**
- * 
- */
 package covidtracker;
 
 import java.util.Comparator;
