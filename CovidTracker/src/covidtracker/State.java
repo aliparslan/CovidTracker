@@ -100,6 +100,7 @@ public class State implements Comparable<State> {
 
     }
     
+    
     /**
      * Checks to see if two states are identical
      * @return boolean if the same or not
