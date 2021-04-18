@@ -1,54 +1,62 @@
 package covidtracker;
 
 /**
+ * Creates race objects for each state
  * 
- * @author aliparslan
- * @version 04.16.2021
+ * @author Matt Wilson
+ * @version 04.15.21
  *
  */
-public class Race implements Comparable {
-
-    // Fields ........................................
-
-    private String name;
-    private float CFR;
-
-    // Constructor ...................................
+public class Race {
+    String name;
+    float CFR;
 
     /**
+     * Class constructor
      * 
+     * @param name
+     *            Race name
+     * @param cases
+     *            Cases for that race
+     * @param deaths
+     *            Deaths for that race
      */
-    public Race(String name, int deaths, int cases) {
+    public Race(String name, Object cases, Object deaths) {
+
         this.name = name;
-        this.CFR = deaths / cases;
+
+        if (this.checkIfNA(cases) || this.checkIfNA(deaths)) {
+            CFR = -1;
+        }
+        else {
+            CFR = (float)((int)deaths) / (float)((int)cases);
+        }
+
     }
 
-    // Methods .......................................
 
     /**
+     * Returns the calculated CFR
      * 
+     * @return CFR
      */
     public float getCFR() {
-        // example comment
-        // something something
-        // random comment
-        return this.CFR;
+        return CFR;
     }
 
-    /**
-     * 
-     */
-    public boolean checkNA(Object obj) {
-        return true;
-        // TODO nothing here yet
-    }
 
     /**
+     * Checks to see if the value passed in is a string "NA"
      * 
+     * @param value
+     * @return boolean if is NA
      */
-    public int compareTo(Object arg0) {
-        // TODO Auto-generated method stub
-        return 0;
+    private boolean checkIfNA(Object value) {
+        if (value.equals("NA")) {
+            return true;
+        }
+        else
+            return false;
     }
 
 }
