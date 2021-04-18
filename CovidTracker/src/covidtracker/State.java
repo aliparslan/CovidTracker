@@ -1,5 +1,6 @@
 package covidtracker;
 
+
 /**
  * Class for creating state objects
  * 
@@ -8,13 +9,13 @@ package covidtracker;
  *
  */
 public class State implements Comparable<State> {
-    String name;
-    Race white;
-    Race black;
-    Race latin;
-    Race asian;
-    Race other;
-    LinkedList<Race> races;
+    private String name;
+    private Race white;
+    private Race black;
+    private Race latin;
+    private Race asian;
+    private Race other;
+    private LinkedList<Race> races;
 
     /**
      * Class constructor
@@ -97,6 +98,23 @@ public class State implements Comparable<State> {
 
         return builder.toString();
 
+    }
+    
+    /**
+     * Checks to see if two states are identical
+     * @return boolean if the same or not
+     */
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        else if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        else {
+            return (name.toString().equals(((State)obj).toString()));
+        }
     }
 
 
