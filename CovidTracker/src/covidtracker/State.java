@@ -15,15 +15,22 @@ public class State implements Comparable<State> {
     Race asian;
     Race other;
     LinkedList<Race> races;
-    
+
     /**
      * Class constructor
-     * @param stateName name
-     * @param whiteRace white
-     * @param blackRace black 
-     * @param latinRace latin
-     * @param asianRace asian
-     * @param otherRace other
+     * 
+     * @param stateName
+     *            name
+     * @param whiteRace
+     *            white
+     * @param blackRace
+     *            black
+     * @param latinRace
+     *            latin
+     * @param asianRace
+     *            asian
+     * @param otherRace
+     *            other
      */
     public State(
         String stateName,
@@ -39,31 +46,37 @@ public class State implements Comparable<State> {
         this.asian = asianRace;
         this.other = otherRace;
     }
-    
+
+
     /**
      * Returns the name of the state
+     * 
      * @return name of state
      */
     public String getName() {
         return name;
     }
-    
+
+
     /**
      * Sorts the linked list of races by their respective CFR
      */
     public void sortCFR() {
         // TO-DO write comparator
     }
-    
+
+
     /**
      * Sorts the linked list of races alphabetically
      */
     public void sortAlpha() {
         // TO-DO write comparator
     }
-    
+
+
     /**
      * String representation of state
+     * 
      * @return String of state information
      */
     public String toString() {
@@ -81,15 +94,10 @@ public class State implements Comparable<State> {
         builder.append(",Other CFR: ");
         builder.append(String.valueOf(other.getCFR()));
         builder.append("]");
-        
+
         return builder.toString();
-        
-        
-        
-        
-        
+
     }
-    
 
 
     @Override
