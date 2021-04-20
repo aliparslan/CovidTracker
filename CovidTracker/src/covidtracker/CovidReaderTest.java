@@ -66,27 +66,27 @@ public class CovidReaderTest extends student.TestCase {
         Race latinMD = new Race("LatinX",635420,11343);
         Race asianMD = new Race("Asian",47733,3999);
         Race otherMD = new Race("Other",539893,2103);
-        Race whiteNC;
-        Race blackNC;
-        Race latinNC;
-        Race asianNC;
-        Race otherNC;
-        Race whiteTN;
-        Race blackTN;
-        Race latinTN;
-        Race asianTN;
-        Race otherTN;
-        Race whiteVA;
-        Race blackVA;
-        Race latinVA;
-        Race asianVA;
-        Race otherVA;
+        Race whiteNC = new Race("White",1202651,30203);
+        Race blackNC = new Race("Black",525056,16605);
+        Race latinNC = new Race("LatinX",7878616,"NA");
+        Race asianNC = new Race("Asian",41305,727);
+        Race otherNC = new Race("Other",1192110,6303);
+        Race whiteTN = new Race("White",1140754,16926);
+        Race blackTN = new Race("Black",491709,9442);
+        Race latinTN = new Race("LatinX",443364,"NA");
+        Race asianTN = new Race("Asian",25846,403);
+        Race otherTN = new Race("Other",847967,2122);
+        Race whiteVA = new Race("White",616402,34311);
+        Race blackVA = new Race("Black",426362,14702);
+        Race latinVA = new Race("LatinX",738177,"NA");
+        Race asianVA = new Race("Asian","NA","NA");
+        Race otherVA = new Race("Other",777332,5745);
         State dc = new State("DC",whiteDC,blackDC,latinDC,asianDC,otherDC);
         State ga = new State("GA",whiteGA,blackGA,latinGA,asianGA,otherGA);
         State md = new State("MD",whiteMD,blackMD,latinMD,asianMD,otherMD);
-        State nc;
-        State tn;
-        State va;
+        State nc = new State("NA",whiteNC,blackNC,latinNC,asianNC,otherNC);
+        State tn = new State("TN",whiteTN,blackTN,latinTN,asianTN,otherTN);
+        State va = new State("VA",whiteVA,blackVA,latinVA,asianVA,otherVA);
         State[] states = new State[6];
         states[0] = dc;
         states[1] = ga;
@@ -95,4 +95,6 @@ public class CovidReaderTest extends student.TestCase {
         states[4] = tn;
         states[5] = va;
     }
+    
+    
 }
