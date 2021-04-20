@@ -15,7 +15,7 @@ public class Input {
             reader = new CovidReader(args[0]);
         }
         else {
-            reader = new CovidReader("input.txt");
+            reader = new CovidReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
         }
 
     }
