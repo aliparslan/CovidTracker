@@ -19,13 +19,18 @@ public class CovidReader {
      * 
      * @param file
      *            with COVID data
+     * @throws FileNotFoundException 
      */
-    public CovidReader(String file) {
+    public CovidReader(String file) throws FileNotFoundException {
         states = this.readCovidFile(file);
-        GUIWindow window = new GUIWindow(states);
     }
 
-
+    /**
+     * Reads covid file
+     * @param fileName covid file
+     * @return states array
+     * @throws FileNotFoundException
+     */
     private State[] readCovidFile(String fileName)
         throws FileNotFoundException {
         State[] tempArray = new State[6];
@@ -58,6 +63,14 @@ public class CovidReader {
         }
 
         return tempArray;
+    }
+    
+    /**
+     * Returns the read file in state array form
+     * @return state array
+     */
+    public State[] getStates() {
+        return states;
     }
 
 }
