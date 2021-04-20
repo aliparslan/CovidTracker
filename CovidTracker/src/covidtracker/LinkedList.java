@@ -34,7 +34,7 @@ public class LinkedList<T> implements Iterator {
      * head node
      */
     public LinkedList(T data) {
-        head.data = data;
+        head = new Node<T>(data);
         size = 1;
     }
 
@@ -80,6 +80,9 @@ public class LinkedList<T> implements Iterator {
      * @return the contents of the head node
      */
     public T peek() {
+        if (this.isEmpty()) {
+            throw new NullPointerException("List is null!");
+        }
         return head.data();
     }
 
@@ -131,6 +134,7 @@ public class LinkedList<T> implements Iterator {
     /**
      * String representation of a LinkedList
      * Example: "{Apples, Bananas, Oranges}"
+     * *In reverse order (i.e. newest items will be first)
      * 
      * @return a string representing the list
      */
