@@ -18,6 +18,6 @@ public class Input {
             reader = new CovidReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
         }
         
-        Window window = new Window(reader.)
+        
     }
 }
