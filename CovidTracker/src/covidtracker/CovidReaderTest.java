@@ -46,6 +46,7 @@ public class CovidReaderTest extends student.TestCase {
     State[] states;
     
     
+    
     /**
      * Set up tests
      */
