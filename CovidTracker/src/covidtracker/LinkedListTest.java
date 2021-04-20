@@ -199,6 +199,4 @@ public class LinkedListTest extends TestCase {
         assertFalse(list2.equals(list));
     }
     
-    
-    
 }
