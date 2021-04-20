@@ -1,5 +1,6 @@
 package covidtracker;
-
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Class for creating state objects
