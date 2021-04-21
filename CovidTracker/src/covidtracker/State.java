@@ -118,7 +118,6 @@ public class State implements Comparable<State> {
         }
     }
 
-
     @Override
     public int compareTo(State newState) {
 
