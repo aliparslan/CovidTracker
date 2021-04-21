@@ -59,30 +59,13 @@ public class LinkedListTest extends TestCase {
     }
     
     /**
-     * tests peek() when expecting exception
+     * Test get()
      */
-    public void peekException() {
-        Exception e = null;
-        try {
-            list.peek();
-        }
-        catch (Exception exception) {
-            e = exception;
-        }
-        assertTrue(e instanceof NullPointerException);
-    }
-    
-    /**
-     * tests peek()
-     */
-    public void testPeek() {
+    public void testGet() {
         list.add("A");
-        assertEquals("A", list.peek());
-        
         list.add("B");
-        list.add("C");
-        list.add("D");
-        assertEquals("D", list.peek());
+        assertEquals("A",list.get(0));
+        assertEquals("B",list.get(1));
     }
     
     /**
@@ -132,34 +115,6 @@ public class LinkedListTest extends TestCase {
         assertEquals(0, list.size());
     }
     
-    /**
-     * tests pop() when expecting exception
-     */
-    public void testPopException() {
-        Exception e = null;
-        try {
-            list.pop();
-        }
-        catch (Exception exception) {
-            e = exception;
-        }
-        assertTrue(e instanceof NullPointerException);
-    }
-    
-    /**
-     * tests pop()
-     */
-    public void testPop() {
-        list.add("A");
-        list.add("B");
-        list.add("C");
-        assertEquals("C", list.pop());
-        assertEquals(2, list.size());
-        assertEquals("B", list.pop());
-        assertEquals(1, list.size());
-        assertEquals("A", list.pop());
-        assertEquals(0, list.size());
-    }
     
     /**
      * tests toString()
@@ -170,7 +125,7 @@ public class LinkedListTest extends TestCase {
         list.add("A");
         list.add("B");
         list.add("C");
-        assertEquals("{C, B, A}", list.toString());
+        assertEquals("{A, B, C}", list.toString());
     }
     
     /**
@@ -185,9 +140,12 @@ public class LinkedListTest extends TestCase {
         Object o = new Object();
         assertFalse(list.equals(o));
         
-        LinkedList<String> list2 = new LinkedList<String>("A");
+        LinkedList<String> list2 = new LinkedList<String>();
+        list2.add("A");
+        list2.add("B");
         assertFalse(list.equals(list2));
         list.add("A");
+        list.add("B");
         assertTrue(list.equals(list2));
         
         list.add("B");
@@ -209,7 +167,7 @@ public class LinkedListTest extends TestCase {
         list.add("C");
         Iterator<String> iterator = list.iterator();
         assertEquals("A",iterator.next());
-        
+        assertTrue(iterator.hasNext());
         
     }
     

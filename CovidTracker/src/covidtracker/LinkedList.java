@@ -124,38 +124,22 @@ public class LinkedList<T> {
     }
 
 
-    /**
-     * Removes most recently added object
-     * (i.e. the item at the top)
-     * 
-     * @return the data of the removed object
-     */
-    public T pop() {
-        if (this.isEmpty()) {
-            throw new NullPointerException("List is empty");
-        }
-        T remove = head.data();
-        head = head.next();
-        size--;
-        return remove;
-    }
 
 
     /**
      * String representation of a LinkedList
      * Example: "{Apples, Bananas, Oranges}"
-     * *In reverse order (i.e. newest items will be first)
      * 
      * @return a string representing the list
      */
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder("{");
-        Node<T> curr = head;
-        while (curr != null) {
+        Node<T> curr = head.next();
+        while (curr != tail) {
             s.append(curr.data());
             curr = curr.next();
-            if (curr != null) {
+            if (curr != tail) {
                 s.append(", ");
             }
         }
@@ -184,9 +168,9 @@ public class LinkedList<T> {
         if (this.getClass() == o.getClass()) {
             LinkedList<T> other = (LinkedList<T>)o;
             if (other.size() == this.size()) {
-                Node<T> curr = head;
-                Node<T> otherCurr = other.head;
-                while (curr != null) {
+                Node<T> curr = head.next();
+                Node<T> otherCurr = other.head.next();
+                while (curr != tail) {
                     if (!curr.data().equals(otherCurr.data())) {
                         return false;
                     }
