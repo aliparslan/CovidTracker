@@ -9,6 +9,8 @@ package covidtracker;
  */
 public class Race {
     String name;
+    int cases;
+    int deaths;
     float CFR;
 
     /**
@@ -26,6 +28,18 @@ public class Race {
         this.name = name;
 
         if (this.checkIfNA(cases) || this.checkIfNA(deaths)) {
+            if (this.checkIfNA(cases) && this.checkIfNA(deaths)) {
+                this.cases = -1;
+                this.deaths = -1;
+            }
+            if (this.checkIfNA(cases)) {
+                this.cases = -1;
+                this.deaths = (int)deaths;
+            }
+            if (this.checkIfNA(deaths)) {
+                this.cases = (int)cases;
+                this.deaths = -1;
+            }
             CFR = -1;
         }
         else {

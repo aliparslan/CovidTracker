@@ -1,5 +1,7 @@
 package covidtracker;
 
+import java.io.FileNotFoundException;
+
 /**
  * Class to test the Covid Reader class
  * @author mattwilson
@@ -44,13 +46,15 @@ public class CovidReaderTest extends student.TestCase {
     State tn;
     State va;
     State[] states;
+    CovidReader reader;
     
     
     
     /**
      * Set up tests
+     * @throws FileNotFoundException 
      */
-    public void setUp() {
+    public void setUp() throws FileNotFoundException {
         Race whiteDC = new Race("White",70678,1924);
         Race blackDC = new Race("Black",179563,13365);
         Race latinDC = new Race("LatinX",97118,2269);
@@ -94,6 +98,18 @@ public class CovidReaderTest extends student.TestCase {
         states[3] = nc;
         states[4] = tn;
         states[5] = va;
+        reader = new CovidReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+    }
+    
+    /**
+     * Test getStates()
+     */
+    public void testGetStates() {
+        
+        for (int i = 0; i < states.length; i++) {
+            assertEquals(states[i],reader.getStates());
+        }
+        
     }
     
     
