@@ -3,6 +3,8 @@
  */
 package prj5;
 
+import covidtracker.GUIWindow;
+
 /**
  * 
  * @author Alip Arslan
@@ -10,5 +12,5 @@ package prj5;
  *
  */
 public class Input {
-
+    GUIWindow gui = new GUIWindow();
 }
