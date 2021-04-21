@@ -23,7 +23,7 @@ public class Race {
      * @param deaths
      *            Deaths for that race
      */
-    public Race(String name, Object cases, Object deaths) {
+    public Race(String name, String cases, String deaths) {
 
         this.name = name;
 

@@ -72,7 +72,7 @@ public class CovidReaderTest extends student.TestCase {
         Race otherMD = new Race("Other","539893","2103");
         Race whiteNC = new Race("White","1202651","30203");
         Race blackNC = new Race("Black","525056","16605");
-        Race latinNC = new Race("LatinX","7878616","NA");
+        Race latinNC = new Race("LatinX","787616","NA");
         Race asianNC = new Race("Asian","41305","727");
         Race otherNC = new Race("Other","1192110","6303");
         Race whiteTN = new Race("White","1140754","16926");

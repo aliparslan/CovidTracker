@@ -1,5 +1,6 @@
 package covidtracker;
 
+import java.text.DecimalFormat;
 import java.util.Iterator;
 
 /**
@@ -89,56 +90,49 @@ public class State implements Comparable<State> {
      */
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        
+
         builder.append(name);
         builder.append("\n");
         this.sortAlpha();
         Iterator<Race> iterator = races.iterator();
         while (iterator.hasNext()) {
-            builder.append(iterator.g
-            
+            Race tempRace = iterator.next();
+            builder.append(tempRace.getName());
+            builder.append(": ");
+            builder.append(String.valueOf(tempRace.getCases()));
+            builder.append(", ");
+            DecimalFormat format = new DecimalFormat("0.0");
+            String cleanCFR = format.format(tempRace.getCFR());
+            builder.append(cleanCFR);
+            builder.append("% CFR");
+            builder.append("\n");
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        builder.append("[State: ");
-        builder.append(name);
-        builder.append(", White CFR: ");
-        builder.append(String.valueOf(white.getCFR()));
-        builder.append(", Black CFR: ");
-        builder.append(String.valueOf(black.getCFR()));
-        builder.append(", Latin CFR: ");
-        builder.append(String.valueOf(latin.getCFR()));
-        builder.append(", Asian CFR: ");
-        builder.append(String.valueOf(asian.getCFR()));
-        builder.append(",Other CFR: ");
-        builder.append(String.valueOf(other.getCFR()));
-        builder.append("]");
+        builder.append("=====");
+        builder.append("\n");
+        this.sortCFR();
+        Iterator<Race> iterator2 = races.iterator();
+        while (iterator2.hasNext()) {
+            Race tempRace = iterator2.next();
+            builder.append(tempRace.getName());
+            builder.append(": ");
+            builder.append(String.valueOf(tempRace.getCases()));
+            builder.append(", ");
+            DecimalFormat format = new DecimalFormat("0.0");
+            String cleanCFR = format.format(tempRace.getCFR());
+            builder.append(cleanCFR);
+            builder.append("% CFR");
+            builder.append("\n");
+        }
+        builder.append("=====");
 
         return builder.toString();
 
     }
-    
-    
+
+
     /**
      * Checks to see if two states are identical
+     * 
      * @return boolean if the same or not
      */
     @Override
@@ -154,6 +148,7 @@ public class State implements Comparable<State> {
             return (this.toString().equals(((State)obj).toString()));
         }
     }
+
 
     @Override
     public int compareTo(State newState) {

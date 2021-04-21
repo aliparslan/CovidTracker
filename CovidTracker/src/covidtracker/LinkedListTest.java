@@ -1,6 +1,7 @@
 package covidtracker;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import student.TestCase;
 
 /**
@@ -168,6 +169,18 @@ public class LinkedListTest extends TestCase {
         Iterator<String> iterator = list.iterator();
         assertEquals("A",iterator.next());
         assertTrue(iterator.hasNext());
+        assertEquals("B",iterator.next());
+        assertEquals("C",iterator.next());
+        assertFalse(iterator.hasNext());
+        Exception e = null;
+        try {
+            iterator.next();
+        }
+        catch (Exception exception) {
+            e = exception;
+        }
+        assertTrue(e instanceof NoSuchElementException);
+        
         
     }
     

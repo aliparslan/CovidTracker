@@ -295,7 +295,7 @@ public class LinkedList<T> {
          */
         @Override
         public boolean hasNext() {
-            return (iterator.next() != null);
+            return (iterator.next() != tail);
         }
 
 
@@ -308,7 +308,7 @@ public class LinkedList<T> {
          */
         @Override
         public T next() {
-            if (iterator.next() == null) {
+            if (iterator.next() == tail) {
                 throw new NoSuchElementException();
             }
             else {
