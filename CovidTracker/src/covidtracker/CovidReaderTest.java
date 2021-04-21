@@ -88,10 +88,10 @@ public class CovidReaderTest extends student.TestCase {
         State dc = new State("DC",whiteDC,blackDC,latinDC,asianDC,otherDC);
         State ga = new State("GA",whiteGA,blackGA,latinGA,asianGA,otherGA);
         State md = new State("MD",whiteMD,blackMD,latinMD,asianMD,otherMD);
-        State nc = new State("NA",whiteNC,blackNC,latinNC,asianNC,otherNC);
+        State nc = new State("NC",whiteNC,blackNC,latinNC,asianNC,otherNC);
         State tn = new State("TN",whiteTN,blackTN,latinTN,asianTN,otherTN);
         State va = new State("VA",whiteVA,blackVA,latinVA,asianVA,otherVA);
-        State[] states = new State[6];
+        states = new State[6];
         states[0] = dc;
         states[1] = ga;
         states[2] = md;

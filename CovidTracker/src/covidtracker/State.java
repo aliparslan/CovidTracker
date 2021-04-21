@@ -45,6 +45,12 @@ public class State implements Comparable<State> {
         this.latin = latinRace;
         this.asian = asianRace;
         this.other = otherRace;
+        races = new LinkedList<Race>();
+        races.add(white);
+        races.add(black);
+        races.add(latin);
+        races.add(asian);
+        races.add(other);
     }
 
 
@@ -114,7 +120,7 @@ public class State implements Comparable<State> {
         }
 
         else {
-            return (name.toString().equals(((State)obj).toString()));
+            return (this.toString().equals(((State)obj).toString()));
         }
     }
 
