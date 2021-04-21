@@ -32,18 +32,20 @@ public class Race {
                 this.cases = -1;
                 this.deaths = -1;
             }
-            if (this.checkIfNA(cases)) {
+            else if (this.checkIfNA(cases)) {
                 this.cases = -1;
-                this.deaths = (int)deaths;
+                this.deaths = Integer.valueOf((String)deaths);
             }
-            if (this.checkIfNA(deaths)) {
-                this.cases = (int)cases;
+            else if (this.checkIfNA(deaths)) {
+                this.cases = Integer.valueOf((String)cases);
                 this.deaths = -1;
             }
             CFR = -1;
         }
         else {
-            CFR = (float)((int)deaths) / (float)((int)cases);
+            this.cases = Integer.valueOf((String)cases);
+            this.deaths = Integer.valueOf((String)deaths);
+            CFR = (float)this.deaths / (float)this.cases;
         }
 
     }
@@ -66,6 +68,24 @@ public class Race {
     public String getName() {
         return name;
     }
+    
+    /**
+     * Returns case number
+     * 
+     * @return int cases
+     */
+    public int getCases() {
+        return cases;
+    }
+    
+    /**
+     * Returns death number()
+     * @return int deaths
+     */
+    public int getDeaths() {
+        return deaths;
+    }
+    
 
 
     /**

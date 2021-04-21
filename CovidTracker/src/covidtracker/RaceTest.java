@@ -21,10 +21,10 @@ public class RaceTest extends TestCase {
      * Set up test cases
      */
     public void setUp() {
-        race1 = new Race("White", 50, 10);
-        race2 = new Race("Asian","NA",10);
-        race3 = new Race("Indian", 150, 110);
-        race4 = new Race("LatinX",10,"NA");
+        race1 = new Race("White","50", "10");
+        race2 = new Race("Asian","NA","10");
+        race3 = new Race("Indian", "150", "110");
+        race4 = new Race("LatinX","10","NA");
     }
     
     /**
@@ -42,5 +42,21 @@ public class RaceTest extends TestCase {
      */
     public void testGetName() {
         assertEquals(race3.getName(), "Indian");
+    }
+    
+    /**
+     * Tests getCases()
+     */
+    public void testGetCases() {
+        assertEquals(race3.getCases(), 150);
+        assertEquals(race2.getCases(), -1);
+    }
+    
+    /**
+     * Tests getDeaths()
+     */
+    public void testGetDeaths() {
+        assertEquals(race3.getDeaths(), 110);
+        assertEquals(race4.getDeaths(), -1);
     }
 }
