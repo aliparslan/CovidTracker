@@ -16,6 +16,7 @@ public class RaceTest extends TestCase {
     private Race race3;
     private Race race4;
     
+    
     /**
      * Set up test cases
      */
