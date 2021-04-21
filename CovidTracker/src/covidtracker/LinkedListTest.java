@@ -1,5 +1,6 @@
 package covidtracker;
 
+import java.util.Iterator;
 import student.TestCase;
 
 /**
@@ -197,6 +198,19 @@ public class LinkedListTest extends TestCase {
         list2.add("E");
         assertFalse(list.equals(list2));
         assertFalse(list2.equals(list));
+    }
+    
+    /**
+     * Tests iterator()
+     */
+    public void testIterator() {
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        Iterator<String> iterator = list.iterator();
+        assertEquals("A",iterator.next());
+        
+        
     }
     
 }

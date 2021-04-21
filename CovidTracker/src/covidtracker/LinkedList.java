@@ -1,6 +1,7 @@
 package covidtracker;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Implementation of a linked list using nodes
@@ -11,11 +12,12 @@ import java.util.Iterator;
  * @param <T>
  *            Object type the linked list will store
  */
-public class LinkedList<T> implements Iterator {
+public class LinkedList<T> {
 
     // Fields ........................................
 
     private Node<T> head;
+    private Node<T> tail;
     private int size;
 
     // Constructor ...................................
@@ -24,18 +26,10 @@ public class LinkedList<T> implements Iterator {
      * Creates an empty linked list
      */
     public LinkedList() {
-        head = null;
+        head = new Node<T>(null);
+        tail = new Node<T>(null);
+        head.setNext(tail);
         size = 0;
-    }
-
-
-    /**
-     * Creates a linked list with data in the
-     * head node
-     */
-    public LinkedList(T data) {
-        head = new Node<T>(data);
-        size = 1;
     }
 
     // Methods .......................................
@@ -46,11 +40,10 @@ public class LinkedList<T> implements Iterator {
      * and resetting the size to 0
      */
     public void clear() {
-        if (head != null) {
-            head.setNext(null);
-            head = null;
-            size = 0;
-        }
+        head = new Node<T>(null);
+        tail = new Node<T>(null);
+        head.setNext(tail);
+        size = 0;
     }
 
 
@@ -75,20 +68,40 @@ public class LinkedList<T> implements Iterator {
 
 
     /**
-     * Looks at the item at the front of the list
-     * 
-     * @return the contents of the head node
+     * Gets the object at the given position
+     *
+     * @param index
+     *            where the object is located
+     * @return The object at the given position
+     * @throws IndexOutOfBoundsException
+     *             if there no node at the given index
      */
-    public T peek() {
-        if (this.isEmpty()) {
-            throw new NullPointerException("List is null!");
-        }
-        return head.data();
+    public T get(int index) {
+        return getNodeAtIndex(index).data();
     }
 
 
     /**
-     * Adds a node with given data to the top of the list
+     * gets the node at that index
+     * 
+     * @param index
+     * @return node at index
+     */
+    private Node<T> getNodeAtIndex(int index) {
+        if (index < 0 || this.size() <= index) {
+            throw new IndexOutOfBoundsException("No element exists at "
+                + index);
+        }
+        Node<T> current = head.next();
+        for (int i = 0; i < index; i++) {
+            current = current.next();
+        }
+        return current;
+    }
+
+
+    /**
+     * Adds a node with given data to the end of the list
      * 
      * @param data
      *            data to be added
@@ -99,17 +112,14 @@ public class LinkedList<T> implements Iterator {
             throw new IllegalArgumentException("Data is null");
         }
 
-        if (this.isEmpty()) {
-            head = new Node<T>(data);
-            size++;
+        Node<T> newNode = new Node<T>(data);
+        Node<T> beforeTail = head;
+        while (beforeTail.next() != tail) {
+            beforeTail = beforeTail.next();
         }
-
-        else {
-            Node<T> curr = new Node<T>(data);
-            curr.setNext(head);
-            head = curr;
-            size++;
-        }
+        beforeTail.setNext(newNode);
+        newNode.setNext(tail);
+        size++;
 
     }
 
@@ -192,24 +202,12 @@ public class LinkedList<T> implements Iterator {
 
 
     /**
-     * 
+     * Iterator method creates Iterator object
+     *
+     * @return new Iterator object
      */
-    @Override
-    public boolean hasNext() {
-        // TODO Auto-generated method stub
-        // iterator method
-        return false;
-    }
-
-
-    /**
-     * 
-     */
-    @Override
-    public Object next() {
-        // TODO Auto-generated method stub
-        // iterator method
-        return null;
+    public Iterator<T> iterator() {
+        return new ListIterator<T>();
     }
 
     /**
@@ -232,15 +230,17 @@ public class LinkedList<T> implements Iterator {
         // Constructor ...............................
 
         /**
+         * Constructor no next
          * 
          * @param data
          */
         public Node(T data) {
-            this.data = data;
+            this(data, null);
         }
 
 
         /**
+         * Constructor with next
          * 
          * @param data
          * @param nextNode
@@ -254,8 +254,9 @@ public class LinkedList<T> implements Iterator {
 
 
         /**
+         * Return data
          * 
-         * @return
+         * @return data
          */
         public T data() {
             return this.data;
@@ -263,8 +264,9 @@ public class LinkedList<T> implements Iterator {
 
 
         /**
+         * Return next node
          * 
-         * @return
+         * @return next node
          */
         public Node<T> next() {
             return this.next;
@@ -272,6 +274,7 @@ public class LinkedList<T> implements Iterator {
 
 
         /**
+         * Set next node
          * 
          * @param nextNode
          */
@@ -281,5 +284,56 @@ public class LinkedList<T> implements Iterator {
 
     }
 
-}
 
+    /**
+     * Class for iterating through the list
+     * 
+     * @author mattwilson
+     *
+     * @param <T>
+     */
+    private class ListIterator<E> implements Iterator<T> {
+        private Node<T> iterator;
+
+        /**
+         * Creates a new DLListIterator
+         */
+        public ListIterator() {
+            iterator = head;
+
+        }
+
+
+        /**
+         * Checks if there are more elements in the list
+         *
+         * @return true if there are more elements in the list
+         */
+        @Override
+        public boolean hasNext() {
+            return (iterator.next() != null);
+        }
+
+
+        /**
+         * Gets the next value in the list
+         *
+         * @return the next value
+         * @throws NoSuchElementException
+         *             if there are no nodes left in the list
+         */
+        @Override
+        public T next() {
+            if (iterator.next() == null) {
+                throw new NoSuchElementException();
+            }
+            else {
+                iterator = iterator.next();
+                return iterator.data();
+            }
+
+        }
+
+    }
+
+}

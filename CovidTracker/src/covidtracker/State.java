@@ -1,5 +1,7 @@
 package covidtracker;
 
+import java.util.Iterator;
+
 /**
  * Class for creating state objects
  * 
@@ -87,6 +89,35 @@ public class State implements Comparable<State> {
      */
     public String toString() {
         StringBuilder builder = new StringBuilder();
+        
+        builder.append(name);
+        builder.append("\n");
+        this.sortAlpha();
+        Iterator<Race> iterator = races.iterator();
+        while (iterator.hasNext()) {
+            builder.append(iterator.g
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         builder.append("[State: ");
         builder.append(name);
         builder.append(", White CFR: ");
