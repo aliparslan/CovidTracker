@@ -1,6 +1,7 @@
 package covidtracker;
 
 import java.text.DecimalFormat;
+import java.util.Comparator;
 import java.util.Iterator;
 
 /**
@@ -66,21 +67,6 @@ public class State implements Comparable<State> {
         return name;
     }
 
-
-    /**
-     * Sorts the linked list of races by their respective CFR
-     */
-    public void sortCFR() {
-        // TO-DO write comparator
-    }
-
-
-    /**
-     * Sorts the linked list of races alphabetically
-     */
-    public void sortAlpha() {
-        // TO-DO write comparator
-    }
 
 
     /**

@@ -15,6 +15,7 @@ public class LinkedListTest extends TestCase {
     // Fields ..........................................
     
     private LinkedList<String> list;
+    private LinkedList<Race> list2;
     
     // Constructor .....................................
     
@@ -32,6 +33,7 @@ public class LinkedListTest extends TestCase {
      */
     public void setUp() {
         list = new LinkedList<String>();
+        list2 = new LinkedList<Race>();
     }
     
     /**
@@ -180,6 +182,38 @@ public class LinkedListTest extends TestCase {
             e = exception;
         }
         assertTrue(e instanceof NoSuchElementException);
+        
+        
+    }
+    
+    /**
+     * Tests sort()
+     */
+    public void testSort() {
+        Race whiteDC = new Race("White","70678","1924");
+        Race blackDC = new Race("Black","179563","13365");
+        Race latinDC = new Race("LatinX","97118","2269");
+        Race asianDC = new Race("Asian","5407","254");
+        Race otherDC = new Race("Other","108784","170");
+        list2.add(whiteDC);
+        list2.add(blackDC);
+        list2.add(latinDC);
+        list2.add(asianDC);
+        list2.add(otherDC);
+        list2.sort(new CompareAlpha());
+        assertEquals(asianDC,list2.get(0));
+        assertEquals(blackDC,list2.get(1));
+        assertEquals(latinDC,list2.get(2));
+        assertEquals(otherDC,list2.get(3));
+        assertEquals(whiteDC,list2.get(4));
+        
+        list2.sort(new CompareCFR());
+        assertEquals(blackDC,list2.get(0));
+        assertEquals(asianDC,list2.get(1));
+        assertEquals(whiteDC,list2.get(2));
+        assertEquals(latinDC,list2.get(3));
+        assertEquals(otherDC,list2.get(4));
+        
         
         
     }

@@ -86,7 +86,25 @@ public class Race {
         return deaths;
     }
     
+    /**
+     * Test to see if two races are equal
+     * @param Object to compare to 
+     * @return if equals
+     */
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        else if (obj.getClass() != this.getClass()) {
+            return false;
+        }
 
+        else {
+            return (this.getName().equals(((Race)obj).getName())
+                && this.getCases() == ((Race)obj).getCases()
+                && this.getDeaths() == ((Race)obj).getDeaths());
+        }
+    }
 
     /**
      * Checks to see if the value passed in is a string "NA"
