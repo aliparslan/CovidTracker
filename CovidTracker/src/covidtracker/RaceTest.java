@@ -71,6 +71,7 @@ public class RaceTest extends TestCase {
         assertEquals(race4.getDeaths(), -1);
         assertEquals(race6.getDeaths(), -1);
         assertEquals(race7.getDeaths(), -1);
+        //
     }
 
 
