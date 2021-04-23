@@ -79,7 +79,7 @@ public class State implements Comparable<State> {
 
         builder.append(name);
         builder.append("\n");
-        this.sortAlpha();
+        races.sort(new CompareAlpha()); // change
         Iterator<Race> iterator = races.iterator();
         while (iterator.hasNext()) {
             Race tempRace = iterator.next();
@@ -95,7 +95,7 @@ public class State implements Comparable<State> {
         }
         builder.append("=====");
         builder.append("\n");
-        this.sortCFR();
+        races.sort(new CompareCFR()); // change
         Iterator<Race> iterator2 = races.iterator();
         while (iterator2.hasNext()) {
             Race tempRace = iterator2.next();

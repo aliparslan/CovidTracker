@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
  * Implementation of a linked list using nodes
  * 
  * @author Alip Arslan
+ * @author Matt Wilson
  * @version 04.17.2021
  *
  * @param <T>
