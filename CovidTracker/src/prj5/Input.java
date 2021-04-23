@@ -3,6 +3,9 @@
  */
 package prj5;
 
+import java.io.FileNotFoundException;
+import covidtracker.State;
+import covidtracker.CovidReader;
 import covidtracker.GUIWindow;
 
 /**
@@ -12,5 +15,30 @@ import covidtracker.GUIWindow;
  *
  */
 public class Input {
-    GUIWindow gui = new GUIWindow();
+
+    /**
+     * 
+     * @param args
+     * @throws FileNotFoundException
+     */
+    public static void main(String[] args) throws FileNotFoundException {
+        if (args.length > 0) {
+            CovidReader reader = new CovidReader(args[0]);
+            State[] states = reader.getStates();
+            for (State s : states) {
+                System.out.print(s.toString());
+
+            }
+        }
+        
+        else {
+            CovidReader reader = new CovidReader(
+                "Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+            State[] states = reader.getStates();
+            for (State s : states) {
+                System.out.print(s.toString());
+            }
+
+        }
+    }
 }
