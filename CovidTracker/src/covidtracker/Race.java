@@ -46,7 +46,8 @@ public class Race {
         else {
             this.cases = Integer.valueOf((String)cases);
             this.deaths = Integer.valueOf((String)deaths);
-            numCaFaRa = (float)(((float)this.deaths / (float)this.cases) * 100.0);
+            numCaFaRa = (float)(((float)this.deaths / (float)this.cases)
+                * 100.0);
         }
 
     }
@@ -95,7 +96,8 @@ public class Race {
     /**
      * Test to see if two races are equal
      * 
-     * @param obj Object
+     * @param obj
+     *            Object
      *            to compare to
      * @return if equals
      */
