@@ -10,14 +10,8 @@ import java.io.FileNotFoundException;
  *
  */
 public class CovidReaderTest extends student.TestCase {
-    State dc;
-    State ga;
-    State md;
-    State nc;
-    State tn;
-    State va;
-    State[] states;
-    CovidReader reader;
+    private State[] states;
+    private CovidReader reader;
 
     /**
      * Set up tests

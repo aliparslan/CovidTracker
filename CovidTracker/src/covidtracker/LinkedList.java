@@ -128,6 +128,9 @@ public class LinkedList<T> {
 
     /**
      * Sorts the linked list of races by a specified comparator
+     * 
+     * @param c
+     *            Comparator<? super T> comparator called to sort races
      */
     public void sort(Comparator<? super T> c) {
         if (size > 1) {
@@ -146,6 +149,14 @@ public class LinkedList<T> {
     }
 
 
+    /**
+     * private helper method to sort races by specfific comparator
+     * 
+     * @param node
+     *            Node<T> reference node
+     * @param c
+     *            Comparator<? super T> comparator called to sort races
+     */
     private void insertSort(Node<T> node, Comparator<? super T> c) {
         T data = node.data();
         Node<T> current = head.next();
@@ -258,6 +269,7 @@ public class LinkedList<T> {
          * Constructor no next
          * 
          * @param data
+         *            T value of Nodes data
          */
         public Node(T data) {
             this(data, null);
@@ -268,7 +280,9 @@ public class LinkedList<T> {
          * Constructor with next
          * 
          * @param data
+         *            T value of Nodes data
          * @param nextNode
+         *            Node<T> the next node of the new node
          */
         public Node(T data, Node<T> nextNode) {
             this.data = data;
@@ -302,6 +316,7 @@ public class LinkedList<T> {
          * Set next node
          * 
          * @param nextNode
+         *            Node<T> next node of the new next
          */
         public void setNext(Node<T> nextNode) {
             this.next = nextNode;

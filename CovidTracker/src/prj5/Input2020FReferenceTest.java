@@ -42,7 +42,7 @@ public class Input2020FReferenceTest extends student.TestCase {
 
         fileName = "CovidOutput_1.txt";
 
-        String covidOutput_1 = "";
+        String covidOutput1 = "";
         fileData = null;
         try {
             // Can throw FileNotFoundException
@@ -54,11 +54,11 @@ public class Input2020FReferenceTest extends student.TestCase {
         }
 
         while (fileData.hasNextLine()) {
-            covidOutput_1 += fileData.nextLine() + "\n";
+            covidOutput1 += fileData.nextLine() + "\n";
         }
 
         assertFuzzyEquals("Output not as expected for input file "
-            + "Cases_and_Deaths_by_race_CRDT_Sep2020.csv", covidOutput_1,
+            + "Cases_and_Deaths_by_race_CRDT_Sep2020.csv", covidOutput1,
             systemOut().getHistory());
 
     }
@@ -80,7 +80,7 @@ public class Input2020FReferenceTest extends student.TestCase {
 
         fileName = "CovidOutput_2.txt";
 
-        String covidOutput_2 = "";
+        String covidOutput2 = "";
         fileData = null;
         try {
             // Can throw FileNotFoundException
@@ -92,11 +92,11 @@ public class Input2020FReferenceTest extends student.TestCase {
         }
 
         while (fileData.hasNextLine()) {
-            covidOutput_2 += fileData.nextLine() + "\n";
+            covidOutput2 += fileData.nextLine() + "\n";
         }
 
         assertFuzzyEquals("Output not as expected for input file "
-            + "Cases_and_Deaths_by_race_RANDOM_NUMBERS.csv", covidOutput_2,
+            + "Cases_and_Deaths_by_race_RANDOM_NUMBERS.csv", covidOutput2,
             systemOut().getHistory());
 
     }

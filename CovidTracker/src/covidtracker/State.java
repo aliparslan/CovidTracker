@@ -13,11 +13,6 @@ import java.util.Iterator;
  */
 public class State implements Comparable<State> {
     private String name;
-    private Race white;
-    private Race black;
-    private Race latin;
-    private Race asian;
-    private Race other;
     private LinkedList<Race> races;
 
     /**
@@ -44,11 +39,11 @@ public class State implements Comparable<State> {
         Race asianRace,
         Race otherRace) {
         this.name = stateName;
-        this.white = whiteRace;
-        this.black = blackRace;
-        this.latin = latinRace;
-        this.asian = asianRace;
-        this.other = otherRace;
+        Race white = whiteRace;
+        Race black = blackRace;
+        Race latin = latinRace;
+        Race asian = asianRace;
+        Race other = otherRace;
         races = new LinkedList<Race>();
         races.add(white);
         races.add(black);
@@ -145,7 +140,7 @@ public class State implements Comparable<State> {
 
     @Override
     public int compareTo(State o) {
-        
+
         return 0;
     }
 

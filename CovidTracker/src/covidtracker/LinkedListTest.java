@@ -158,7 +158,7 @@ public class LinkedListTest extends TestCase {
         assertFalse(list.equals(list3));
         list.add("A");
         list.add("B");
-        assertTrue(list.equals(list2));
+        assertTrue(list.equals(list3));
 
         list.add("B");
         list.add("C");
