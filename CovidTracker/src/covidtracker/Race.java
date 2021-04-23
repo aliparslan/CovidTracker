@@ -12,7 +12,7 @@ public class Race {
     private String name;
     private int cases;
     private int deaths;
-    private float CFR;
+    private float numCaFaRa;
 
     /**
      * Class constructor
@@ -41,12 +41,12 @@ public class Race {
                 this.cases = Integer.valueOf((String)cases);
                 this.deaths = -1;
             }
-            CFR = -1;
+            numCaFaRa = -1;
         }
         else {
             this.cases = Integer.valueOf((String)cases);
             this.deaths = Integer.valueOf((String)deaths);
-            CFR = (float)(((float)this.deaths / (float)this.cases) * 100.0);
+            numCaFaRa = (float)(((float)this.deaths / (float)this.cases) * 100.0);
         }
 
     }
@@ -58,7 +58,7 @@ public class Race {
      * @return CFR
      */
     public float getCFR() {
-        return CFR;
+        return numCaFaRa;
     }
 
 
@@ -122,12 +122,7 @@ public class Race {
      * @return boolean if is NA
      */
     private boolean checkIfNA(Object value) {
-        if (value.equals("NA")) {
-            return true;
-        }
-        else {
-            return false;   
-        }
+        return value.equals("NA");
     }
 
 }

@@ -25,7 +25,7 @@ public class RaceTest extends TestCase {
         race1 = new Race("White", "50", "10");
         race2 = new Race("Asian", "NA", "10");
         race3 = new Race("Indian", "150", "110");
-        race4 = new Race("LatinX", "10", "NA");
+        race4 = new Race("LatinX", "50", "NA");
         race5 = new Race("White", "50", "10");
     }
 
@@ -71,7 +71,15 @@ public class RaceTest extends TestCase {
      * Test equals()
      */
     public void testEquals() {
+        Race a = null;
+        assertFalse(race2.equals(a));
+        Object b = new Object();
+        assertFalse(race3.equals(b));
+        assertFalse(race3.equals(race4));
+        assertFalse(race1.equals(race4));
         assertTrue(race1.equals(race5));
+        assertTrue(race5.equals(race5));
         assertFalse(race1.equals(race2));
+        assertFalse(race2.equals(race4));
     }
 }

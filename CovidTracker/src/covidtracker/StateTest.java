@@ -44,7 +44,7 @@ public class StateTest extends TestCase {
      * test equals method
      */
     public void testEquals() {
-        assertFalse(georgia.equals(null));
+        assertFalse(georgia == null);
         Object b = new Object();
         assertFalse(northCarolina.equals(b));
         assertTrue(virginia.equals(virginia));
