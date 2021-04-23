@@ -10,36 +10,6 @@ import java.io.FileNotFoundException;
  *
  */
 public class CovidReaderTest extends student.TestCase {
-    Race whiteDC;
-    Race blackDC;
-    Race latinDC;
-    Race asianDC;
-    Race otherDC;
-    Race whiteGA;
-    Race blackGA;
-    Race latinGA;
-    Race asianGA;
-    Race otherGA;
-    Race whiteMD;
-    Race blackMD;
-    Race latinMD;
-    Race asianMD;
-    Race otherMD;
-    Race whiteNC;
-    Race blackNC;
-    Race latinNC;
-    Race asianNC;
-    Race otherNC;
-    Race whiteTN;
-    Race blackTN;
-    Race latinTN;
-    Race asianTN;
-    Race otherTN;
-    Race whiteVA;
-    Race blackVA;
-    Race latinVA;
-    Race asianVA;
-    Race otherVA;
     State dc;
     State ga;
     State md;

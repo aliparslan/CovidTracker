@@ -8,10 +8,10 @@ package covidtracker;
  *
  */
 public class Race {
-    String name;
-    int cases;
-    int deaths;
-    float CFR;
+    private String name;
+    private int cases;
+    private int deaths;
+    private float CFR;
 
     /**
      * Class constructor
@@ -94,7 +94,7 @@ public class Race {
     /**
      * Test to see if two races are equal
      * 
-     * @param Object
+     * @param obj Object
      *            to compare to
      * @return if equals
      */
@@ -124,8 +124,9 @@ public class Race {
         if (value.equals("NA")) {
             return true;
         }
-        else
-            return false;
+        else {
+            return false;   
+        }
     }
 
 }

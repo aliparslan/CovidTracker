@@ -152,10 +152,10 @@ public class LinkedListTest extends TestCase {
         Object o = new Object();
         assertFalse(list.equals(o));
 
-        LinkedList<String> list2 = new LinkedList<String>();
-        list2.add("A");
-        list2.add("B");
-        assertFalse(list.equals(list2));
+        LinkedList<String> list3 = new LinkedList<String>();
+        list3.add("A");
+        list3.add("B");
+        assertFalse(list.equals(list3));
         list.add("A");
         list.add("B");
         assertTrue(list.equals(list2));
@@ -163,11 +163,11 @@ public class LinkedListTest extends TestCase {
         list.add("B");
         list.add("C");
         list.add("D");
-        list2.add("B");
-        list2.add("C");
-        list2.add("E");
-        assertFalse(list.equals(list2));
-        assertFalse(list2.equals(list));
+        list3.add("B");
+        list3.add("C");
+        list3.add("E");
+        assertFalse(list.equals(list3));
+        assertFalse(list3.equals(list));
     }
 
 

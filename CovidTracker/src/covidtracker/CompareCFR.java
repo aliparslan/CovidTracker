@@ -15,6 +15,10 @@ public class CompareCFR implements Comparator<Race> {
     /**
      * Returns the highest CFR between two Races
      * 
+     * @param left
+     *            Race first race to compare
+     * @param right
+     *            Race second race to compare
      * @return int of which Race has the higher CFR
      */
     public int compare(Race left, Race right) {

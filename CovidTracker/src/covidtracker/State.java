@@ -1,7 +1,6 @@
 package covidtracker;
 
 import java.text.DecimalFormat;
-import java.util.Comparator;
 import java.util.Iterator;
 
 /**
@@ -144,8 +143,9 @@ public class State implements Comparable<State> {
 
 
     @Override
-    public int compareTo(State newState) {
-
+    public int compareTo(State o) {
+        
         return 0;
     }
+
 }
