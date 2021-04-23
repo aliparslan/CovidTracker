@@ -28,28 +28,29 @@ public class Race {
 
         this.name = name;
 
-        if (this.checkIfNA(cases) || this.checkIfNA(deaths)) {
-            if (this.checkIfNA(cases) && this.checkIfNA(deaths)) {
-                this.cases = -1;
-                this.deaths = -1;
-            }
-            else if (this.checkIfNA(cases)) {
-                this.cases = -1;
-                this.deaths = Integer.valueOf((String)deaths);
-            }
-            else if (this.checkIfNA(deaths)) {
-                this.cases = Integer.valueOf((String)cases);
-                this.deaths = -1;
-            }
+        if (this.checkIfNA(cases) && this.checkIfNA(deaths)) {
+            this.cases = -1;
+            this.deaths = -1;
             numCaFaRa = -1;
         }
+        else if (this.checkIfNA(cases)) {
+            this.cases = -1;
+            this.deaths = Integer.valueOf((String)deaths);
+            numCaFaRa = -1;
+        }
+        else if (this.checkIfNA(deaths)) {
+            this.cases = Integer.valueOf((String)cases);
+            this.deaths = -1;
+            numCaFaRa = -1;
+        }
+
         else {
             this.cases = Integer.valueOf((String)cases);
             this.deaths = Integer.valueOf((String)deaths);
             numCaFaRa = (float)(((float)this.deaths / (float)this.cases)
                 * 100.0);
         }
-
+        
     }
 
 
