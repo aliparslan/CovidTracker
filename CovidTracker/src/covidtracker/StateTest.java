@@ -50,4 +50,12 @@ public class StateTest extends TestCase {
         assertFalse(northCarolina.equals(b));
         assertTrue(virginia.equals(virginia));
     }
+    
+    /**
+     * tests compareTo()
+     */
+    public void testCompareTo() {
+        // i don't think we'll end up keeping this test
+        assertEquals(0, virginia.compareTo(georgia));
+    }
 }

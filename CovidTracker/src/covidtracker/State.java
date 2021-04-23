@@ -140,7 +140,7 @@ public class State implements Comparable<State> {
 
     @Override
     public int compareTo(State o) {
-
+        // do we need this?
         return 0;
     }
 
