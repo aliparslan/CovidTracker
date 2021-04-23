@@ -51,11 +51,11 @@ public class CovidReader {
             String latinDeath = list[8];
             String asianDeath = list[9];
             String otherDeath = list[10];
-            Race white = new Race("White", whiteCase, whiteDeath);
-            Race black = new Race("Black", blackCase, blackDeath);
-            Race latin = new Race("LatinX", latinCase, latinDeath);
-            Race asian = new Race("Asian", asianCase, asianDeath);
-            Race other = new Race("Other", otherCase, otherDeath);
+            Race white = new Race("white", whiteCase, whiteDeath);
+            Race black = new Race("black", blackCase, blackDeath);
+            Race latin = new Race("latinX", latinCase, latinDeath);
+            Race asian = new Race("asian", asianCase, asianDeath);
+            Race other = new Race("other", otherCase, otherDeath);
             tempArray[index] = new State(name, white, black, latin, asian,
                 other);
             index++;

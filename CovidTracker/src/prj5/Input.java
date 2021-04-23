@@ -25,7 +25,7 @@ public class Input {
         if (args.length > 0) {
             CovidReader reader = new CovidReader(args[0]);
             State[] states = reader.getStates();
-            for (State s : states) {
+            for (State s : states) {     
                 System.out.print(s.toString());
 
             }

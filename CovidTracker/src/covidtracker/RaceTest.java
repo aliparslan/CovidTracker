@@ -33,7 +33,7 @@ public class RaceTest extends TestCase {
      * Tests getCFR()
      */
     public void testGetCFR() {
-        assertEquals(race1.getCFR(), .2, 2);
+        assertEquals(race1.getCFR(), 20, 2);
         assertEquals(race2.getCFR(),-1,1);
         assertEquals(race4.getCFR(),-1,1);
         

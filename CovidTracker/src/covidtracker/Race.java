@@ -45,7 +45,7 @@ public class Race {
         else {
             this.cases = Integer.valueOf((String)cases);
             this.deaths = Integer.valueOf((String)deaths);
-            CFR = (float)this.deaths / (float)this.cases;
+            CFR = (float)(((float)this.deaths / (float)this.cases)*100.0);
         }
 
     }
