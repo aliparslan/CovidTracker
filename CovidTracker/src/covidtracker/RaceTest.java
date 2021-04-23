@@ -18,6 +18,7 @@ public class RaceTest extends TestCase {
     private Race race4;
     private Race race5;
     private Race race6;
+    private Race race7;
 
     /**
      * Set up test cases
@@ -29,6 +30,7 @@ public class RaceTest extends TestCase {
         race4 = new Race("LatinX", "50", "NA");
         race5 = new Race("White", "50", "10");
         race6 = new Race("Black", "NA", "NA");
+        race7 = new Race("Black", "20", "NA");
     }
 
 
@@ -68,6 +70,7 @@ public class RaceTest extends TestCase {
         assertEquals(race3.getDeaths(), 110);
         assertEquals(race4.getDeaths(), -1);
         assertEquals(race6.getDeaths(), -1);
+        assertEquals(race7.getDeaths(), -1);
     }
 
 

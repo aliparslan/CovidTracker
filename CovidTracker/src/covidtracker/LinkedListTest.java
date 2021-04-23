@@ -78,11 +78,29 @@ public class LinkedListTest extends TestCase {
     
     /**
      * tests get() when expecting an exception
+     * index is less than 0
      */
-    public void testGetException() {
+    public void testGetException1() {
         Exception e = null;
         try {
             list.get(-1);
+        }
+        catch (Exception exception) {
+            e = exception;
+            
+        }
+        assertTrue(e instanceof IndexOutOfBoundsException);
+    }
+    
+    /**
+     * tests get() when expecting an exception
+     * index is >= size
+     */
+    public void testGetException2() {
+        list.add("Hello");
+        Exception e = null;
+        try {
+            list.get(2);
         }
         catch (Exception exception) {
             e = exception;
