@@ -335,7 +335,8 @@ public class LinkedList<T> {
          */
         @Override
         public boolean hasNext() {
-            return (iterator.next() != tail);
+            //return (iterator.next() != tail);
+            return iterator != null;
         }
 
 
@@ -348,14 +349,16 @@ public class LinkedList<T> {
          */
         @Override
         public T next() {
-            if (iterator.next() == tail) {
-                throw new NoSuchElementException();
-            }
-            else {
-                iterator = iterator.next();
-                return iterator.data();
-            }
-
+            //if (!this.hasNext()) {
+            //    throw new NoSuchElementException();
+            //}
+            //else {
+            //    iterator = iterator.next();
+            //    return iterator.data();
+            //}
+            Node<T> temp = iterator;
+            iterator = iterator.next();
+            return temp.data();
         }
 
     }
