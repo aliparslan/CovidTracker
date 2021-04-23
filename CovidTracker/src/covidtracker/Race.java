@@ -45,7 +45,7 @@ public class Race {
         else {
             this.cases = Integer.valueOf((String)cases);
             this.deaths = Integer.valueOf((String)deaths);
-            CFR = (float)(((float)this.deaths / (float)this.cases)*100.0);
+            CFR = (float)(((float)this.deaths / (float)this.cases) * 100.0);
         }
 
     }
@@ -59,7 +59,8 @@ public class Race {
     public float getCFR() {
         return CFR;
     }
-    
+
+
     /**
      * Returns race's name
      * 
@@ -68,7 +69,8 @@ public class Race {
     public String getName() {
         return name;
     }
-    
+
+
     /**
      * Returns case number
      * 
@@ -77,18 +79,23 @@ public class Race {
     public int getCases() {
         return cases;
     }
-    
+
+
     /**
      * Returns death number()
+     * 
      * @return int deaths
      */
     public int getDeaths() {
         return deaths;
     }
-    
+
+
     /**
      * Test to see if two races are equal
-     * @param Object to compare to 
+     * 
+     * @param Object
+     *            to compare to
      * @return if equals
      */
     public boolean equals(Object obj) {
@@ -100,11 +107,12 @@ public class Race {
         }
 
         else {
-            return (this.getName().equals(((Race)obj).getName())
-                && this.getCases() == ((Race)obj).getCases()
-                && this.getDeaths() == ((Race)obj).getDeaths());
+            return (this.getName().equals(((Race)obj).getName()) && this
+                .getCases() == ((Race)obj).getCases() && this
+                    .getDeaths() == ((Race)obj).getDeaths());
         }
     }
+
 
     /**
      * Checks to see if the value passed in is a string "NA"
@@ -119,6 +127,5 @@ public class Race {
         else
             return false;
     }
-
 
 }

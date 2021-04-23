@@ -124,7 +124,8 @@ public class LinkedList<T> {
         size++;
 
     }
-    
+
+
     /**
      * Sorts the linked list of races by a specified comparator
      */
@@ -133,37 +134,37 @@ public class LinkedList<T> {
             Node<T> unsorted = head.next().next();
             Node<T> sorted = head.next();
             sorted.setNext(null);
-            
-            while (unsorted != tail && unsorted != null){
+
+            while (unsorted != tail && unsorted != null) {
                 Node<T> nodeToInsert = unsorted;
                 unsorted = unsorted.next();
-                insertSort(nodeToInsert,c);
-                
+                insertSort(nodeToInsert, c);
+
             }
         }
-        
+
     }
-    
+
+
     private void insertSort(Node<T> node, Comparator<? super T> c) {
         T data = node.data();
         Node<T> current = head.next();
         Node<T> previous = head;
-        
+
         while ((current != null) && (c.compare(data, current.data()) > 0)) {
             previous = current;
             current = current.next();
         }
-        
+
         if (previous != head) {
             previous.setNext(node);
             node.setNext(current);
-        } else {
+        }
+        else {
             node.setNext(head.next());
             head.setNext(node);
         }
     }
-
-
 
 
     /**
@@ -336,7 +337,7 @@ public class LinkedList<T> {
         @Override
         public boolean hasNext() {
             return (iterator.next() != tail && iterator.next() != null);
-            //return iterator != null;
+            // return iterator != null;
         }
 
 
@@ -356,9 +357,9 @@ public class LinkedList<T> {
                 iterator = iterator.next();
                 return iterator.data();
             }
-            //Node<T> temp = iterator;
-            //iterator = iterator.next();
-            //return temp.data();
+            // Node<T> temp = iterator;
+            // iterator = iterator.next();
+            // return temp.data();
         }
 
     }

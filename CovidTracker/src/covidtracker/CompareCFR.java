@@ -7,6 +7,7 @@ import java.util.Comparator;
 
 /**
  * Comparator for CFR numbers
+ * 
  * @author Carly Daffan
  * @version 4.18.21
  */
@@ -17,12 +18,11 @@ public class CompareCFR implements Comparator<Race> {
      * @return int of which Race has the higher CFR
      */
     public int compare(Race left, Race right) {
-        if ((left.getCFR()-right.getCFR()) < 0) {
+        if ((left.getCFR() - right.getCFR()) <= 0) {
             return 1;
-        } else if ((left.getCFR()-right.getCFR()) > 0) {
+        }
+        else {
             return -1;
-        } else {
-            return 0;
         }
     }
 

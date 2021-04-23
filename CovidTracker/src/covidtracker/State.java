@@ -68,7 +68,6 @@ public class State implements Comparable<State> {
     }
 
 
-
     /**
      * String representation of state
      * 
@@ -89,6 +88,10 @@ public class State implements Comparable<State> {
             builder.append(" cases, ");
             DecimalFormat format = new DecimalFormat("0.0");
             String cleanCFR = format.format(tempRace.getCFR());
+            if (cleanCFR.substring(cleanCFR.length() - 2, cleanCFR.length())
+                .equals(".0")) {
+                cleanCFR = cleanCFR.substring(0, cleanCFR.length() - 2);
+            }
             builder.append(cleanCFR);
             builder.append("% CFR");
             builder.append("\n");
@@ -105,6 +108,10 @@ public class State implements Comparable<State> {
             builder.append(" cases, ");
             DecimalFormat format = new DecimalFormat("0.0");
             String cleanCFR = format.format(tempRace.getCFR());
+            if (cleanCFR.substring(cleanCFR.length() - 2, cleanCFR.length())
+                .equals(".0")) {
+                cleanCFR = cleanCFR.substring(0, cleanCFR.length() - 2);
+            }
             builder.append(cleanCFR);
             builder.append("% CFR");
             builder.append("\n");
