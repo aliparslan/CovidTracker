@@ -133,10 +133,11 @@ public class LinkedList<T> {
             Node<T> sorted = head.next();
             sorted.setNext(null);
             
-            while (unsorted.data() != null && unsorted != null){
+            while (unsorted != tail && unsorted != null){
                 Node<T> nodeToInsert = unsorted;
                 unsorted = unsorted.next();
                 insertSort(nodeToInsert,c);
+                
             }
         }
         

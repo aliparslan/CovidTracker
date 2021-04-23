@@ -17,7 +17,13 @@ public class CompareCFR implements Comparator<Race> {
      * @return int of which Race has the higher CFR
      */
     public int compare(Race left, Race right) {
-        return (int)(left.getCFR()-right.getCFR());
+        if ((left.getCFR()-right.getCFR()) < 0) {
+            return 1;
+        } else if ((left.getCFR()-right.getCFR()) > 0) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
 }
