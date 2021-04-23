@@ -1,5 +1,6 @@
 package covidtracker;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -121,6 +122,44 @@ public class LinkedList<T> {
         newNode.setNext(tail);
         size++;
 
+    }
+    
+    /**
+     * Sorts the linked list of races by a specified comparator
+     */
+    public void sort(Comparator<? super T> c) {
+        if (size > 1) {
+            Node<T> unsorted = head.next().next();
+            Node<T> sorted = head.next();
+            sorted.setNext(null);
+            
+            while (unsorted != tail && unsorted != null){
+                Node<T> nodeToInsert = unsorted;
+                unsorted = unsorted.next();
+                insertSort(nodeToInsert,c);
+                
+            }
+        }
+        
+    }
+    
+    private void insertSort(Node<T> node, Comparator<? super T> c) {
+        T data = node.data();
+        Node<T> current = head.next();
+        Node<T> previous = head;
+        
+        while ((current != null) && (c.compare(data, current.data()) > 0)) {
+            previous = current;
+            current = current.next();
+        }
+        
+        if (previous != head) {
+            previous.setNext(node);
+            node.setNext(current);
+        } else {
+            node.setNext(head.next());
+            head.setNext(node);
+        }
     }
 
 
