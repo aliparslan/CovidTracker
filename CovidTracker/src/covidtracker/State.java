@@ -7,7 +7,8 @@ import java.util.Iterator;
  * Class for creating state objects
  * 
  * @author Matt Wilson
- * @version 04.18.21
+ * @author Carly Daffam
+ * @version 04.23.21
  *
  */
 public class State implements Comparable<State> {

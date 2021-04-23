@@ -9,7 +9,7 @@ import java.util.Comparator;
  * Comparator for CFR numbers
  * 
  * @author Carly Daffan
- * @version 4.18.21
+ * @version 4.23.21
  */
 public class CompareCFR implements Comparator<Race> {
     /**

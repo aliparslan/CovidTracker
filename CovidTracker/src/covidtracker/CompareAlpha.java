@@ -6,7 +6,7 @@ import java.util.Comparator;
  * Comparator for Race names
  * 
  * @author Carly Daffan
- * @version 4.18.21
+ * @version 4.23.21
  */
 public class CompareAlpha implements Comparator<Race> {
     /**

@@ -9,7 +9,7 @@ import student.TestCase;
  * Class to test the race class
  * 
  * @author Carly Daffan
- * @version 4.20.21
+ * @version 4.23.21
  */
 public class RaceTest extends TestCase {
     private Race race1;

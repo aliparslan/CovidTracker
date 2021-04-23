@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Class to read in covid data and display it in a GUIWindow
  * 
  * @author mattwilson
- * @version 04.19.21
+ * @version 04.23.21
  *
  */
 public class CovidReader {

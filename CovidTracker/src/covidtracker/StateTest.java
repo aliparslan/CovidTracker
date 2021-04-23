@@ -7,7 +7,7 @@ import student.TestCase;
 
 /**
  * @author Carly Daffan
- *
+ * @version 4.23.21
  */
 public class StateTest extends TestCase {
     private State virginia;

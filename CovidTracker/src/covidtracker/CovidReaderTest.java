@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
  * Class to test the Covid Reader class
  * 
  * @author mattwilson
- * @version 04.20.21
+ * @version 04.23.21
  *
  */
 public class CovidReaderTest extends student.TestCase {

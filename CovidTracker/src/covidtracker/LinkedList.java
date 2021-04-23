@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
  * 
  * @author Alip Arslan
  * @author Matt Wilson
- * @version 04.17.2021
+ * @version 04.23.2021
  *
  * @param <T>
  *            Object type the linked list will store

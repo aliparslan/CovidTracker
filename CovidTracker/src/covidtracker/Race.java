@@ -4,7 +4,8 @@ package covidtracker;
  * Creates race objects for each state
  * 
  * @author Matt Wilson
- * @version 04.15.21
+ * @author Carly Daffan
+ * @version 04.23.21
  *
  */
 public class Race {

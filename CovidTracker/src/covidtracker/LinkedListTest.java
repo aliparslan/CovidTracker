@@ -8,7 +8,7 @@ import student.TestCase;
  * Tests methods in LinkedList and the inner Node class
  * 
  * @author Alip Arslan
- * @version 04.18.2021
+ * @version 04.23.2021
  *
  */
 public class LinkedListTest extends TestCase {
