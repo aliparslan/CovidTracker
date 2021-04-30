@@ -162,8 +162,16 @@ public class GUIWindow {
         LinkedList<Race> races = currentlyDisplayed.getRaces();
         Iterator<Race> iterator = races.iterator();
         int graphStartX = window.getGraphPanelWidth() / 10;
-        int graphStartY = window.getGraphPanelWidth() / 10;
+        int graphStartY = 7 * window.getGraphPanelHeight() / 10;
+        int currentPlottingX = graphStartX;
         while (iterator.hasNext()) {
+            Race tempRace = iterator.next();
+            float cfr = tempRace.getCFR();
+            String name = tempRace.getName();
+            Shope bar = new Shape(currentPlottingX, graphStartY, )
+            
+            
+            
             
         }
         
