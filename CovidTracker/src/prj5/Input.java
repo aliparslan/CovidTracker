@@ -11,6 +11,7 @@ import covidtracker.GUIWindow;
 /**
  * 
  * @author Alip Arslan
+ * @author Matt Wilson
  * @version 04.20.2021
  *
  */
@@ -26,7 +27,7 @@ public class Input {
             CovidReader reader = new CovidReader(args[0]);
             State[] states = reader.getStates();
             GUIWindow window = new GUIWindow(states);
-
+            
             }
 
         else {

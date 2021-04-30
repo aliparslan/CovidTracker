@@ -186,6 +186,9 @@ public class GUIWindow {
     }
 
 
+    /**
+     * 
+     */
     private void updateGraph() {
         if (currentlyDisplayed != null) {
             // Start by sorting the races
