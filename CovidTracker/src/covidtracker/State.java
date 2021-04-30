@@ -11,7 +11,7 @@ import java.util.Iterator;
  * @version 04.23.21
  *
  */
-public class State implements Comparable<State> {
+public class State {
     private String name;
     private LinkedList<Race> races;
 
@@ -60,6 +60,32 @@ public class State implements Comparable<State> {
      */
     public String getName() {
         return name;
+    }
+
+
+    /**
+     * Sorts the races linked list within the class into alphabetical order
+     */
+    public void sortRacesAlpha() {
+        races.sort(new CompareAlpha());
+    }
+
+
+    /**
+     * Sorts the races linked list within the class into decreasing CFR
+     */
+    public void sortRacesCfr() {
+        races.sort(new CompareCFR());
+    }
+
+
+    /**
+     * Returns the linked list of races to then display
+     * 
+     * @return linked list of races
+     */
+    public LinkedList<Race> getRaces() {
+        return races;
     }
 
 
@@ -135,13 +161,6 @@ public class State implements Comparable<State> {
         else {
             return (this.toString().equals(((State)obj).toString()));
         }
-    }
-
-
-    @Override
-    public int compareTo(State o) {
-        // do we need this?
-        return 0;
     }
 
 }
