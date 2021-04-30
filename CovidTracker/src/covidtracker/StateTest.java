@@ -6,6 +6,7 @@ package covidtracker;
 import student.TestCase;
 
 /**
+ * Class to test the State class
  * 
  * @author Carly Daffan
  * @version 4.23.21
@@ -51,7 +52,8 @@ public class StateTest extends TestCase {
         assertFalse(northCarolina.equals(b));
         assertTrue(virginia.equals(virginia));
     }
-    
+
+
     /**
      * tests sortRacesAlpha()
      */
@@ -62,16 +64,17 @@ public class StateTest extends TestCase {
         Race race4 = new Race("Asian", "70", "10");
         Race race5 = new Race("Other", "60", "10");
         virginia = new State("Virginia", race1, race2, race3, race4, race5);
-        
+
         virginia.sortRacesAlpha();
         assertEquals(race4, virginia.getRaces().get(0));
         assertEquals(race2, virginia.getRaces().get(1));
         assertEquals(race3, virginia.getRaces().get(2));
         assertEquals(race5, virginia.getRaces().get(3));
         assertEquals(race1, virginia.getRaces().get(4));
-        
+
     }
-    
+
+
     /**
      * tests sortRacesCfr()
      */
@@ -82,15 +85,14 @@ public class StateTest extends TestCase {
         Race race4 = new Race("Asian", "70", "10");
         Race race5 = new Race("Other", "60", "10");
         virginia = new State("Virginia", race1, race2, race3, race4, race5);
-        
+
         virginia.sortRacesCfr();
         assertEquals(race2, virginia.getRaces().get(0));
         assertEquals(race3, virginia.getRaces().get(1));
         assertEquals(race5, virginia.getRaces().get(2));
         assertEquals(race4, virginia.getRaces().get(3));
         assertEquals(race1, virginia.getRaces().get(4));
-        
+
     }
-    
 
 }

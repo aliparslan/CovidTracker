@@ -5,9 +5,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * Class to read in covid data and display it in a GUIWindow
+ * Class to read in COVID data and display it in a GUIWindow
  * 
- * @author mattwilson
+ * @author Matt Wilson
  * @version 04.23.21
  *
  */

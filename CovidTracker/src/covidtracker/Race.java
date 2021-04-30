@@ -50,7 +50,7 @@ public class Race {
             numCaFaRa = (float)(((float)this.deaths / (float)this.cases)
                 * 100.0);
         }
-        
+
     }
 
 
@@ -85,7 +85,7 @@ public class Race {
 
 
     /**
-     * Returns death number()
+     * Returns death number
      * 
      * @return int deaths
      */

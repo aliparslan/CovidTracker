@@ -150,7 +150,7 @@ public class LinkedList<T> {
 
 
     /**
-     * private helper method to sort races by specfific comparator
+     * private helper method to sort races by specific comparator
      * 
      * @param node
      *            Node<T> reference node
@@ -328,9 +328,11 @@ public class LinkedList<T> {
     /**
      * Class for iterating through the list
      * 
-     * @author mattwilson
+     * @author Matt Wilson
+     * @version 04.23.2021
      *
      * @param <T>
+     *            the type of data to be used
      */
     private class ListIterator<E> implements Iterator<T> {
         private Node<T> iterator;
@@ -372,9 +374,7 @@ public class LinkedList<T> {
                 iterator = iterator.next();
                 return iterator.data();
             }
-            // Node<T> temp = iterator;
-            // iterator = iterator.next();
-            // return temp.data();
+
         }
 
     }

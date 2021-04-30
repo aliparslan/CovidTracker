@@ -10,8 +10,12 @@ import cs2.Window;
 import cs2.WindowSide;
 
 /**
+ * Frontend representation of COVID data, shown in bar graphs.
+ * View can be changed to be sorted by alphabet or by CFR, and
+ * there are 6 states that can be alternated between to see data for.
  * 
  * @author Alip Arslan
+ * @author Matt Wilson
  * @version 04.20.2021
  *
  */
@@ -27,7 +31,7 @@ public class GUIWindow {
     // Constructor ...................................
 
     /**
-     * 
+     * Initializes buttons and the window
      */
     public GUIWindow(State[] states) { // leaving parameters empty for now for
                                        // testing
@@ -187,7 +191,7 @@ public class GUIWindow {
 
 
     /**
-     * 
+     * Updates the GUI when a button is pressed
      */
     private void updateGraph() {
         if (currentlyDisplayed != null) {
@@ -245,7 +249,7 @@ public class GUIWindow {
 
                 }
 
-                // Shifts start positiion for next column
+                // Shifts start position for next column
                 currentPlottingX = currentPlottingX + (1 * window
                     .getGraphPanelWidth() / 5);
 

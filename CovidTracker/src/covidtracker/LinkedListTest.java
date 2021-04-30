@@ -75,7 +75,8 @@ public class LinkedListTest extends TestCase {
         assertEquals("A", list.get(0));
         assertEquals("B", list.get(1));
     }
-    
+
+
     /**
      * tests get() when expecting an exception
      * index is less than 0
@@ -87,11 +88,12 @@ public class LinkedListTest extends TestCase {
         }
         catch (Exception exception) {
             e = exception;
-            
+
         }
         assertTrue(e instanceof IndexOutOfBoundsException);
     }
-    
+
+
     /**
      * tests get() when expecting an exception
      * index is >= size
@@ -104,7 +106,7 @@ public class LinkedListTest extends TestCase {
         }
         catch (Exception exception) {
             e = exception;
-            
+
         }
         assertTrue(e instanceof IndexOutOfBoundsException);
     }
@@ -227,9 +229,6 @@ public class LinkedListTest extends TestCase {
         assertTrue(e instanceof NoSuchElementException);
 
     }
-    
-    
-    
 
 
     /**
@@ -259,7 +258,7 @@ public class LinkedListTest extends TestCase {
         assertEquals(whiteDC, list2.get(2));
         assertEquals(latinDC, list2.get(3));
         assertEquals(otherDC, list2.get(4));
-        
+
         LinkedList<Race> list3 = new LinkedList<Race>();
         list3.sort(new CompareAlpha());
         // just trying this for test coverage

@@ -88,10 +88,10 @@ public class RaceTest extends TestCase {
         assertTrue(race5.equals(race5));
         assertFalse(race1.equals(race2));
         assertFalse(race2.equals(race4));
-        
+
         Race c = new Race("White", "40", "10");
         assertFalse(race1.equals(c));
-        
+
         Race d = new Race("White", "50", "20");
         assertFalse(race1.equals(d));
     }
