@@ -1,6 +1,13 @@
 package covidtracker;
 
+import java.awt.Color;
+import java.text.DecimalFormat;
 import java.util.Iterator;
+import cs2.Button;
+import cs2.Shape;
+import cs2.TextShape;
+import cs2.Window;
+import cs2.WindowSide;
 
 /**
  * 
@@ -12,7 +19,7 @@ public class GUIWindow {
 
     // Fields ........................................
 
-    private LinkedList<State> states;
+    private State[] states;
     private Window window;
     private State currentlyDisplayed;
     private String currentComparator;
@@ -22,12 +29,13 @@ public class GUIWindow {
     /**
      * 
      */
-    public GUIWindow() { // leaving parameters empty for now for testing
+    public GUIWindow(State[] states) { // leaving parameters empty for now for testing
         this.states = states;
         currentlyDisplayed = null;
         currentComparator = "alpha";
         window = new Window();
         window.setTitle("Covid Statistics Tracker");
+        window.setSize(600, 500);
         
         // Initialize buttons
         Button sortByAlphaButton = new Button("Sort by Alpha");
@@ -40,7 +48,7 @@ public class GUIWindow {
         
         Button sortByCFRButton = new Button("Sort by CFR");
         sortByCFRButton.onClick(this,"sortByCFR");
-        window.addButton(sortByAlphaButton, WindowSide.NORTH);
+        window.addButton(sortByCFRButton, WindowSide.NORTH);
         
         Button showDCButton = new Button("Represent DC");
         showDCButton.onClick(this,"showDC");
@@ -74,7 +82,7 @@ public class GUIWindow {
      * @param button Represent DC
      */
     public void showDC(Button button) {
-        currentlyDisplayed = states.get(0);
+        currentlyDisplayed = states[0];
         updateGraph();
     }
     
@@ -83,7 +91,7 @@ public class GUIWindow {
      * @param button Represent GA
      */
     public void showGA(Button button) {
-        currentlyDisplayed = states.get(1);
+        currentlyDisplayed = states[1];
         updateGraph();
     }
     
@@ -92,7 +100,7 @@ public class GUIWindow {
      * @param button Represent MD
      */
     public void showMD(Button button) {
-        currentlyDisplayed = states.get(2);
+        currentlyDisplayed = states[2];
         updateGraph();
     }
     
@@ -101,7 +109,7 @@ public class GUIWindow {
      * @param button Represent NC
      */
     public void showNC(Button button) {
-        currentlyDisplayed = states.get(2);
+        currentlyDisplayed = states[3];
         updateGraph();
     }
     
@@ -110,7 +118,7 @@ public class GUIWindow {
      * @param button Represent TN
      */
     public void showTN(Button button) {
-        currentlyDisplayed = states.get(3);
+        currentlyDisplayed = states[4];
         updateGraph();
     }
     
@@ -119,7 +127,7 @@ public class GUIWindow {
      * @param button Represent VA
      */
     public void showVA(Button button) {
-        currentlyDisplayed = states.get(4);
+        currentlyDisplayed = states[5];
         updateGraph();
     }
 
@@ -145,7 +153,7 @@ public class GUIWindow {
      * Sorts the races in descending CFR order
      * @param button Sort by CFR
      */
-    public void sortByAlpha(Button button) {
+    public void sortByCFR(Button button) {
         currentComparator = "cfr";
         updateGraph();
     }
@@ -153,22 +161,45 @@ public class GUIWindow {
     
     
     private void updateGraph() {
-        // Start by sorting the races
-        if (currentComparator.equals("alpha")) {
-            currentlyDisplayed.sortRacesAlpha();
-        } else {
-            currentlyDisplayed.sortRacesCfr();
-        }
-        LinkedList<Race> races = currentlyDisplayed.getRaces();
-        Iterator<Race> iterator = races.iterator();
-        int graphStartX = window.getGraphPanelWidth() / 10;
-        int graphStartY = 7 * window.getGraphPanelHeight() / 10;
-        int currentPlottingX = graphStartX;
-        while (iterator.hasNext()) {
-            Race tempRace = iterator.next();
-            float cfr = tempRace.getCFR();
-            String name = tempRace.getName();
-            Shope bar = new Shape(currentPlottingX, graphStartY, )
+        if (currentlyDisplayed != null) {
+            // Start by sorting the races
+            if (currentComparator.equals("alpha")) {
+                currentlyDisplayed.sortRacesAlpha();
+            } else {
+                currentlyDisplayed.sortRacesCfr();
+            }
+            window.removeAllShapes();
+            LinkedList<Race> races = currentlyDisplayed.getRaces();
+            Iterator<Race> iterator = races.iterator();
+            // Plotting Positions
+            int graphStartX = window.getGraphPanelWidth() / 12;
+            int graphStartY = 3 * window.getGraphPanelHeight() / 10;
+            int textHeight = 8 * window.getGraphPanelHeight() / 10;
+            int cfrHeight = 9 * window.getGraphPanelHeight() / 10;
+            int currentPlottingX = graphStartX;
+            
+            // Adding bars and text
+            while (iterator.hasNext()) {
+                Race tempRace = iterator.next();
+                float cfr = tempRace.getCFR();
+                String name = tempRace.getName();
+                Shape bar = new Shape(currentPlottingX, graphStartY, 10,100);
+                window.addShape(bar);
+                TextShape shape = new TextShape(currentPlottingX - 20, textHeight, tempRace.getName(), Color.black);
+                window.addShape(shape);
+                
+                // Makes CFR value presentable
+                DecimalFormat format = new DecimalFormat("0.0");
+                String cleanCFR = format.format(tempRace.getCFR());
+                if (cleanCFR.substring(cleanCFR.length() - 2, cleanCFR.length())
+                    .equals(".0")) {
+                    cleanCFR = cleanCFR.substring(0, cleanCFR.length() - 2);
+                }
+                
+                TextShape shapeCFR = new TextShape(currentPlottingX - 12, cfrHeight, cleanCFR + '%', Color.black);
+                window.addShape(shapeCFR);
+                currentPlottingX = currentPlottingX + (1 * window.getGraphPanelWidth() / 5);
+            }
             
             
             
